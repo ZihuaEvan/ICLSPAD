@@ -407,8 +407,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--ee-model-path",
         type=str,
-        # default="/home/dhz/tmp_model/EAGLE-EYE-LLaVA-7B-10k",
-        default="/seu_share/home/yangxu/230238542/ICLSD/EAGLE_EYE/eagle_eye/train/weights/ide3test",
+        default="./train/weights/ide3test",
         help="The path to the weights. This can be a local folder or a Hugging Face repo ID.",
     )
     parser.add_argument("--base-model-path", type=str, default="./ide3/",
@@ -438,7 +437,7 @@ if __name__ == "__main__":
     parser.add_argument("--answer-dir", type=str,default="../outputs",help="The output answer file.")
     parser.add_argument("--trainjson", type=str, default="./karpathy_train_captions.json",help="Path to the input JSON file containing questions or data.")
     parser.add_argument("--valjson", type=str, default="./karpathy_val_captions.json",help="Path to the input JSON file containing questions or data.")
-    parser.add_argument("--datapath", type=str, default="/seu_nvme/ogai/datasets/coco2014",help="Name or path of the dataset to be used for evaluation.")
+    parser.add_argument("--datapath", type=str, default="./datasets/coco2014",help="Name or path of the dataset to be used for evaluation.")
 
     parser.add_argument(
         "--max-new-token",
@@ -510,4 +509,5 @@ if __name__ == "__main__":
         max_gpu_memory=args.max_gpu_memory,
         temperature=args.temperature,
         tree_choices=args.tree_choices,
+
     )
